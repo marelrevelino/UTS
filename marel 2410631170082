@@ -1,0 +1,184 @@
+    #include <iostream>
+    using namespace std;
+
+
+    // SOAL 1
+
+    void calculateFinalGrade(float absen, float tugas, float uts, float uas, string &hurufMutu, float &nilaiAkhir) {
+     // Menghitung nilai akhir mahasiswa
+      nilaiAkhir = (absen * 0.1) + (tugas * 0.2) + (uts * 0.3) + (uas * 0.4);
+
+      if (nilaiAkhir >= 85 && nilaiAkhir < 100) {
+        hurufMutu = "A";
+      } else if (nilaiAkhir >= 80 && nilaiAkhir < 85) {
+        hurufMutu = "B";
+      } else if (nilaiAkhir >= 75 && nilaiAkhir < 80) {
+        hurufMutu = "C";
+      } else if (nilaiAkhir >= 70 && nilaiAkhir < 75) {
+        hurufMutu = "D";
+      } else {
+        hurufMutu = "E";
+      }
+    }
+
+    int main() {
+      string nama, npm, hurufMutu;
+      float absen, tugas, uts, uas, nilaiAkhir;
+
+      // Masukkan data
+      cout << "Masukkan nama: ";
+      getline(cin, nama);
+      cout << "Masukkan NPM: ";
+      getline(cin, npm);
+      cout << "Masukkan nilai absen: ";
+      cin >> absen;
+      cout << "Masukkan nilai tugas: ";
+      cin >> tugas;
+      cout << "Masukkan nilai UTS: ";
+      cin >> uts;
+      cout << "Masukkan nilai UAS: ";
+      cin >> uas;
+
+      // Hitung hasil akhir
+      calculateFinalGrade(absen, tugas, uts, uas, hurufMutu, nilaiAkhir);
+
+      // Tampilkan hasil
+      cout << "Nama: " << nama << endl;
+      cout << "NPM: " << npm << endl;
+      cout << "Nilai Absen: " << absen << endl;
+      cout << "Nilai Tugas: " << tugas << endl;
+      cout << "Nilai UTS: " << uts << endl;
+      cout << "Nilai UAS: " << uas << endl;
+      cout << "Nilai Akhir: " << nilaiAkhir << endl;
+      cout << "Huruf Mutu: " << hurufMutu << endl;
+
+
+    // SOAL 2
+
+    int angka;
+
+      cout << "Masukkan Angka : ";
+      cin >> angka;
+
+
+      for (int i = 1; i <= angka; ++i) {
+        // Mencetak bintang
+        for (int j = 1; j <= i; ++j) {
+          cout << "*";
+        }
+        cout << endl;
+      }
+
+
+    // SOAL 3
+
+    // Penjumlahan
+    int tambah(int a, int b) {
+      return a + b;
+    }
+
+    // Pengurangan
+    int kurang(int a, int b) {
+      return a - b;
+    }
+
+    // Perkalian
+    int kali(int a, int b) {
+      return a * b;
+    }
+
+    // Pembagian
+    float bagi(int a, int b) {
+      if (b == 0) {
+        cout << "Tidak bisa membagi dengan nol!" << endl;
+        return 0;
+      } else {
+        return (float)a / b;
+      }
+    }
+
+    int main(){
+      int pilihan, a, b;
+
+      cout << "Menu Operasi Matematika"<< endl;
+      cout << "1. Penjumlahan" << endl;
+      cout << "2. Pengurangan" << endl;
+      cout << "3. Perkalian" << endl;
+      cout << "4. Pembagian" << endl;
+      cout << "Pilih operasi (1-4): ";
+      cin >> pilihan;
+
+      cout << "Masukkan angka pertama: ";
+      cin >> a;
+      cout << "Masukkan angka kedua: ";
+      cin >> b;
+
+
+      switch (pilihan) {
+        case 1:
+          cout << "Hasil dari Penjumlahan untuk " << a << " dan " << b << " adalah " << tambah(a, b) << endl;
+          break;
+        case 2:
+          cout << "Hasil dari Pengurangan untuk " << a << " dan " << b << " adalah " << kurang(a, b) << endl;
+          break;
+        case 3:
+          cout << "Hasil dari Perkalian untuk " << a << " dan " << b << " adalah " << kali(a, b) << endl;
+          break;
+        case 4:
+          cout << "Hasil dari Pembagian untuk " << a << " dan " << b << " adalah " << bagi(a, b) << endl;
+          break;
+        default:
+          cout << "Pilihan tidak valid!" << endl;
+      }
+
+    // SOAL 4
+    int main() {
+      int angka;
+
+      cout << "Masukkan Angka : ";
+      cin >> angka;
+
+      cout << "Bilangan Ganjil :" << endl;
+      for (int i = 1; i <= angka; i++) {
+        if (i % 2 != 0) {
+          cout << i << endl;
+        }
+      }
+
+      cout << "Bilangan Genap :" << endl;
+      for (int i = 0; i <= angka; i++) {
+        if (i % 2 == 0) {
+          cout << i << endl;
+        }
+      }
+
+    // SOAL 5
+
+    int main() {
+      int tinggiBadan, beratBadan, bmi;
+
+      cout << "Masukkan tinggi badan (cm): ";
+      cin >> tinggiBadan;
+
+      cout << "Masukkan berat badan (kg): ";
+      cin >> beratBadan;
+
+      bmi = beratBadan / (tinggiBadan / 100 * tinggiBadan / 100);
+
+      if (bmi < 18.5) {
+        cout << "Berat badan kurang." << endl;
+      } else if (bmi >= 18.5 && bmi <= 24.9) {
+        cout << "Berat badan ideal." << endl;
+      } else if (bmi > 24.9 && bmi <= 29.9) {
+        cout << "Berat badan lebih." << endl;
+      } else if (bmi > 29.9) {
+        cout << "Berat badan sangat lebih." << endl;
+      }
+
+      return 0;
+    }
+
+
+
+
+
